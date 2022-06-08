@@ -18,6 +18,6 @@ networks:
 
 ## Update files
 ### traefik.yml
-Place your email in place of `YOUR_EMAIL`
-Place your provider name in place of `YOUR_PROVIDER`, see https://doc.traefik.io/traefik/https/acme/#providers
+- Place your email in place of `YOUR_EMAIL`
+- Place your provider name in place of `YOUR_PROVIDER`, see https://doc.traefik.io/traefik/https/acme/#providers
 
