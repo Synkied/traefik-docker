@@ -22,5 +22,5 @@ certificatesResolvers:
       email: YOUR_EMAIL
       storage: acme.json
       dnsChallenge:
-        provider: hetzner  # https://doc.traefik.io/traefik/https/acme/#providers
+        provider: YOUR_PROVIDER  # https://doc.traefik.io/traefik/https/acme/#providers
         delayBeforeCheck: 0
