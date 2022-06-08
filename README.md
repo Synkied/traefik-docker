@@ -40,3 +40,7 @@ services:
     - "traefik.http.routers.lingyuai_front_nginx-secure.tls.domains[0].main=EXAMPLE.COM"
     - "traefik.http.routers.lingyuai_front_nginx-secure.tls.domains[0].sans=*.EXAMPLE.COM"
 ```
+
+## Providers
+### OVH
+https://www.grottedubarbu.fr/traefik-dns-challenge-ovh/
