@@ -39,16 +39,16 @@ services:
  nginx:
   labels:
     - 'traefik.enable=true'
-    - "traefik.http.routers.lingyuai_front_nginx.entrypoints=http"
-    - 'traefik.http.routers.lingyuai_front_nginx.rule=Host(`EXAMPLE.COM`)'
+    - "traefik.http.routers.nginx.entrypoints=http"
+    - 'traefik.http.routers.nginx.rule=Host(`EXAMPLE.COM`)'
     - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
-    - "traefik.http.routers.lingyuai_front_nginx.middlewares=traefik-https-redirect"
-    - "traefik.http.routers.lingyuai_front_nginx-secure.entrypoints=https"
-    - "traefik.http.routers.lingyuai_front_nginx-secure.rule=Host(`EXAMPLE.COM`)"
-    - "traefik.http.routers.lingyuai_front_nginx-secure.tls=true"
-    - "traefik.http.routers.lingyuai_front_nginx-secure.tls.certresolver=le"
-    - "traefik.http.routers.lingyuai_front_nginx-secure.tls.domains[0].main=EXAMPLE.COM"
-    - "traefik.http.routers.lingyuai_front_nginx-secure.tls.domains[0].sans=*.EXAMPLE.COM"
+    - "traefik.http.routers.nginx.middlewares=traefik-https-redirect"
+    - "traefik.http.routers.nginx-secure.entrypoints=https"
+    - "traefik.http.routers.nginx-secure.rule=Host(`EXAMPLE.COM`)"
+    - "traefik.http.routers.nginx-secure.tls=true"
+    - "traefik.http.routers.nginx-secure.tls.certresolver=le"
+    - "traefik.http.routers.nginx-secure.tls.domains[0].main=EXAMPLE.COM"
+    - "traefik.http.routers.nginx-secure.tls.domains[0].sans=*.EXAMPLE.COM"
 ```
 
 ## Providers
