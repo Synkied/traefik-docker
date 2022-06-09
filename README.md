@@ -17,6 +17,12 @@ networks:
 ```
 
 ## Update files
+### acme.json
+Set permissions to 600 on for this file on your server, otherwise traefik won't perform SSL verifications.
+`chmod 600 acme.json`
+
+Associated error message: `unable to get ACME account: permissions 664 for acme.json are too open, please use 600`
+
 ### traefik.yml
 - Place your email in place of `YOUR_EMAIL`
 - Place your provider name in place of `YOUR_PROVIDER`, see https://doc.traefik.io/traefik/https/acme/#providers
