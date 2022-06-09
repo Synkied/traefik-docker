@@ -13,7 +13,7 @@ providers:
     watch: true
     exposedByDefault: false
 
-log: {}
+accessLog: {}
 
 certificatesResolvers:
   le:
