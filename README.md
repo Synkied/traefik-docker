@@ -1,8 +1,8 @@
 # Usage
 
-- Clone this repository to your server.
+- Clone this repository on your server.
 - Create a docker network on your server: `docker network create traefik-proxy`
-- Edit your projects `docker-compose.yml` files to use this new network.
+- Edit your projects `docker-compose.yml` files to use this new network, like so:
 
 ```
 services:
@@ -20,6 +20,10 @@ networks:
 ### traefik.yml
 - Place your email in place of `YOUR_EMAIL`
 - Place your provider name in place of `YOUR_PROVIDER`, see https://doc.traefik.io/traefik/https/acme/#providers
+
+### docker-compose.yml
+- Change `traefik.yourdomain.com` with your desired endpoint to access traefik on your server
+- If needed, uncomment lines about auth, and define a user/password combination
 
 ### Your apps docker-compose.yml files
 
