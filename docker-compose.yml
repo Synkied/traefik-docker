@@ -20,6 +20,8 @@ services:
       - ./acme.json:/acme.json # Certificates will be stored here
     labels:
       - "traefik.enable=true"
+      # - "traefik.http.middlewares.traefik-auth.basicauth.users=user:md5_password"
+      # - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
 
 networks:
   traefik-proxy:

@@ -25,7 +25,6 @@ Associated error message: `unable to get ACME account: permissions 664 for acme.
 
 ### traefik.yml
 - Place your email in place of `YOUR_EMAIL`
-- Place your provider name in place of `YOUR_PROVIDER`, see https://doc.traefik.io/traefik/https/acme/#providers
 
 ### docker-compose.yml
 - Change `traefik.yourdomain.com` with your desired endpoint to access traefik on your server
