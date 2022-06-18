@@ -36,20 +36,20 @@ Associated error message: `unable to get ACME account: permissions 664 for acme.
 Place these labels under your nginx/apache container config, replacing `EXAMPLE.COM` by your domain name.
 ```
 services:
- nginx:
+ nginx_proxy:
   labels:
-    - 'traefik.enable=true'
-    - "traefik.http.routers.nginx.entrypoints=http"
-    - 'traefik.http.routers.nginx.rule=Host(`EXAMPLE.COM`)'
-    - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
-    - "traefik.http.routers.nginx.middlewares=traefik-https-redirect"
-    - "traefik.http.routers.nginx-secure.entrypoints=https"
-    - "traefik.http.routers.nginx-secure.rule=Host(`EXAMPLE.COM`)"
-    - "traefik.http.routers.nginx-secure.tls=true"
-    - "traefik.http.routers.nginx-secure.tls.certresolver=le"
-    - "traefik.http.routers.nginx-secure.tls.domains[0].main=EXAMPLE.COM"
-    - "traefik.http.routers.nginx-secure.tls.domains[0].sans=*.EXAMPLE.COM"
+  - "traefik.enable=true"
+  - "traefik.http.routers.nginx_proxy.entrypoints=http"
+  - "traefik.http.routers.nginx_proxy.rule=Host(`${DOMAIN_NAME}`) || Host(`www.${DOMAIN_NAME}`)"
+  - "traefik.http.routers.nginx_proxy.middlewares=redirect-to-https@file"
+  - "traefik.http.routers.nginx_proxy-secure.entrypoints=https"
+  - "traefik.http.routers.nginx_proxy-secure.rule=Host(`${DOMAIN_NAME}`) || Host(`www.${DOMAIN_NAME}`)"
+  - "traefik.http.routers.nginx_proxy-secure.middlewares=redirect-to-non-www@file"
+  - "traefik.http.routers.nginx_proxy-secure.tls=true"
+  - "traefik.http.routers.nginx_proxy-secure.tls.certresolver=myresolver"
 ```
+Where `myresolver` could be `le` if you want to use letsencrypt.
+Where `DOMAIN_NAME` is a variable set in your `.env` file or somewhere else, see https://docs.docker.com/compose/environment-variables/
 
 ## Providers
 ### OVH
