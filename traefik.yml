@@ -25,6 +25,5 @@ certificatesResolvers:
       # caServer: https://acme-staging-v02.api.letsencrypt.org/directory
       email: YOUR_EMAIL
       storage: acme.json
-      dnsChallenge:
-        provider: YOUR_PROVIDER  # https://doc.traefik.io/traefik/https/acme/#providers
-        delayBeforeCheck: 0
+      httpchallenge:
+        entrypoint: http
