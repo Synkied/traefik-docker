@@ -15,6 +15,7 @@ networks:
   traefik-proxy:
     external: true
 ```
+**When adding new domain, don't forget to restart your traefik container**
 
 ## Update files
 ### acme.json
